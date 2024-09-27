@@ -1,0 +1,16 @@
+# Makefile to compile main3.c into executable named my3proc
+
+CC = gcc
+CFLAGS = -Wall -g
+TARGET = my3proc
+
+all: $(TARGET)
+
+$(TARGET): main3.o
+	$(CC) $(CFLAGS) -o $(TARGET) main3.o
+
+main3.o: main3.c
+	$(CC) $(CFLAGS) -c main3.c
+
+clean:
+	rm -f *.o $(TARGET)
